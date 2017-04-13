@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上传周报</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/jquery-3.1.1.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap-datetimepicker.js"></script>
+    <script src="js/bootstrap-datetimepicker.fr.js"></script>
+    <style>*{
+        font-family: SimHei;
+    }</style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="breadcrumb">
+            <li><a href="">首页</a></li>
+            <li><a href="">项目列表</a></li>
+            <li>周报上传</li>
+        </div>
+
+                <div class="alert alert-warning" role="alert">
+                    <span class="glyphicon glyphicon-exclamation-sign">提示</span>
+                </div>
+        <table class="table table-bordered">
+            <tr>
+                <td width="100">项目名称</td>
+                <td></td>
+                <td width="100">专业</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>指导教师</td>
+                <td></td>
+                <td>学生姓名</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>开始时间</td>
+                <td></td>
+                <td>结束时间</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>企业</td>
+                <td></td>
+                <td>状态</td>
+                <td></td>
+            </tr>
+        </table>
+        <h4 class="text-center">项目完成进度</h4>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                60%
+            </div>
+        </div>
+        <hr>
+                <form class="form-horizontal" role="form">
+                    <div class="form-group has-success has-feedback">
+                        <label class="control-label col-lg-1">标题</label>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control" placeholder="项目题目">
+                            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-1">难易程度</label>
+                        <div class="dropdown col-lg-4">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                --请选择--
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a href="#">轻松</a></li>
+                                <li><a href="#">中等</a></li>
+                                <li><a href="#">难</a></li>
+                                <li><a href="#">很难</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-1">企业名称</label>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control" placeholder="企业名称">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-1">项目内容</label>
+                        <div class="col-lg-11">
+                            <textarea name="" class="form-control" rows="10" placeholder="内容简介"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-1">遇到问题</label>
+                        <div class="col-lg-11">
+                            <textarea name="" class="form-control" rows="5" placeholder="内容简介"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-1">本周完成</label>
+                        <div class="col-lg-11">
+                            <textarea name="" class="form-control" rows="5" placeholder="内容简介"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-1">下周计划</label>
+                        <div class="col-lg-11">
+                            <textarea name="" class="form-control" rows="5" placeholder="内容简介"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                    <label class="control-label col-lg-1">心得体会</label>
+                        <div class="col-lg-11">
+                            <textarea name="" class="form-control" rows="5" placeholder="内容简介"></textarea>
+                        </div>
+                    </div>
+
+                </form>
+        <div class="form-group">
+            <label for="dtp_input1" class="col-md-2 control-label col-lg-1">上传时间</label>
+            <div class="input-group date form_datetime col-lg-4" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                <input class="form-control" size="16" type="text" value="" readonly>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+            </div>
+            <input type="hidden" id="dtp_input1" value="" /><br/>
+        </div>
+        <hr>
+        <div class="row">
+            <button type="button" class="btn btn-success col-lg-1 pull-right" >保存</button>
+            <button type="button" class="btn btn-danger col-lg-1 pull-right" style="margin-right: 20px">放弃</button>
+        </div>
+        <hr>
+        <div class="row">
+            <button type="button" class="btn btn-primary col-lg-1 pull-right">上传周报</button>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $('.form_datetime').datetimepicker({
+            //language:  'fr',
+            weekStart: 1,
+            todayBtn:  1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            forceParse: 0,
+            showMeridian: 1
+        });
+        $('.form_date').datetimepicker({
+            language:  'fr',
+            weekStart: 1,
+            todayBtn:  1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0
+        });
+        $('.form_time').datetimepicker({
+            language:  'fr',
+            weekStart: 1,
+            todayBtn:  1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 1,
+            minView: 0,
+            maxView: 1,
+            forceParse: 0
+        });
+    </script>
+</body>
+</html>
