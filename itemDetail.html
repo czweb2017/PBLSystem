@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>项目详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/jquery-3.1.1.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap-datetimepicker.js"></script>
+    <script src="js/bootstrap-datetimepicker.fr.js"></script>
+    <script src="js/echarts.js"></script>
+    <style>*{
+        font-family: SimHei;
+    }
+        .czDiv{
+            height:470px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<!--返回顶部-->
+<a href="#">
+    <div style="border-radius: 5px;text-align:center;padding-top:15px;width: 50px;height: 50px;position: fixed;background-color:#838383;opacity: .7;right: 40px;bottom: 80px;">
+        <span class="glyphicon glyphicon glyphicon-arrow-up"></span>
+    </div>
+</a>
+    <div class="container">
+        <div class="breadcrumb">
+            <li><a href="">首页</a></li>
+            <li><a href="">项目</a></li>
+            <li>项目详情</li>
+        </div>
+                <div class="alert alert-warning" role="alert">
+                    <span class="glyphicon glyphicon-exclamation-sign">提示</span>
+                </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="panel">
+                    <h4>上周完成</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aliquam aperiam, ex excepturi facere ipsum iure laboriosam magnam maxime necessitatibus nemo, nostrum numquam porro rerum suscipit ut velit veritatis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis doloremque earum, eligendi eos est, facere fugit id magni odio odit officiis praesentium quasi quod repudiandae sequi tempore totam voluptate?</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="panel">
+                    <h4>本周完成</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aliquam aperiam, ex excepturi facere ipsum iure laboriosam magnam maxime necessitatibus nemo, nostrum numquam porro rerum suscipit ut velit veritatis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis doloremque earum, eligendi eos est, facere fugit id magni odio odit officiis praesentium quasi quod repudiandae sequi tempore totam voluptate?</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="panel panel-primary" style="height:600px;">
+                    <div class="panel-heading">周报记录</div>
+                    <div class="panel-body">
+                        <div class="czDiv">
+                            <div class="well" style="height: 140px;">
+                                <div class="row">
+                                    <div class="col-lg-10">
+                                        <h4>题目:XXX 上传时间:XXXX-XX-XX 作者:XX</h4>
+                                        <p style="height: 60px;overflow: hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae blanditiis cum et explicabo perspiciatis quaerat quod sit unde! Consequatur cumque harum illo ipsum iusto minima possimus rerum ullam velit?</p>
+                                    </div>
+                                    <div class="col-lg-2"><h4 class="text-primary">得分:87</h4><a style="margin-top:40px;" class="btn btn-default btn-block">查看</a></div>
+                                </div>
+
+                            </div>
+                            <div class="well" style="height: 140px;">
+                                <div class="row">
+                                    <div class="col-lg-10">
+                                        <h4>题目:XXX 上传时间:XXXX-XX-XX 作者:XX</h4>
+                                        <p style="height: 60px;overflow: hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae blanditiis cum et explicabo perspiciatis quaerat quod sit unde! Consequatur cumque harum illo ipsum iusto minima possimus rerum ullam velit?</p>
+                                    </div>
+                                    <div class="col-lg-2"><h4 class="text-primary">得分:87</h4><a style="margin-top:40px;" class="btn btn-default btn-block">查看</a></div>
+                                </div>
+
+                            </div>
+                            <div class="well" style="height: 140px;">
+                                <div class="row">
+                                    <div class="col-lg-10">
+                                        <h4>题目:XXX 上传时间:XXXX-XX-XX 作者:XX</h4>
+                                        <p style="height: 60px;overflow: hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae blanditiis cum et explicabo perspiciatis quaerat quod sit unde! Consequatur cumque harum illo ipsum iusto minima possimus rerum ullam velit?</p>
+                                    </div>
+                                    <div class="col-lg-2"><h4 class="text-primary">得分:87</h4><a style="margin-top:40px;" class="btn btn-default btn-block">查看</a></div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <nav>
+                                    <ul class="pagination">
+                                        <li><a href="#">
+                                            <span>&laquo;</span>
+                                        </a></li>
+                                        <li class="active"><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">5</a></li>
+                                        <li><a href="#">6</a></li>
+                                        <li><a href="#">
+                                            <span>&raquo;</span>
+                                        </a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="col-lg-7" style="margin-top:20px;">
+                                <a class="btn btn-primary pull-right" href="uploadReport.html">上传周报</a>
+                                <a class="btn btn-primary pull-right" href="uploadReport.html" style="margin-right:20px;">上传文件</a>
+                                <a class="btn btn-default pull-right" href="uploadReport.html" style="margin-right:20px;">去提问</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="well " style="height: 507px;overflow-y:scroll;">
+                    <div class="media">
+                        <div class="media-left">
+                            <img src="img/defaultperson.png" alt="64x64" width="64" height="64">
+                        </div>
+                        <div class="media-body">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <img src="img/defaultperson.png" alt="64x64" width="64" height="64">
+                        </div>
+                        <div class="media-body">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <img src="img/defaultperson.png" alt="64x64" width="64" height="64">
+                        </div>
+                        <div class="media-body">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <img src="img/defaultperson.png" alt="64x64" width="64" height="64">
+                        </div>
+                        <div class="media-body">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <img src="img/defaultperson.png" alt="64x64" width="64" height="64">
+                        </div>
+                        <div class="media-body">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <img src="img/defaultperson.png" alt="64x64" width="64" height="64">
+                        </div>
+                        <div class="media-body">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <img src="img/defaultperson.png" alt="64x64" width="64" height="64">
+                        </div>
+                        <div class="media-body">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <img src="img/defaultperson.png" alt="64x64" width="64" height="64">
+                        </div>
+                        <div class="media-body">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <img src="img/defaultperson.png" alt="64x64" width="64" height="64">
+                        </div>
+                        <div class="media-body">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <img src="img/defaultperson.png" alt="64x64" width="64" height="64">
+                        </div>
+                        <div class="media-body">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <img src="img/defaultperson.png" alt="64x64" width="64" height="64">
+                        </div>
+                        <div class="media-body">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-lg-8">
+                            <textarea name="" class="form-control" rows="3" placeholder="问题或想说的话"></textarea>
+                        </div>
+                        <div class="col-lg-4">
+                            <button class="btn btn-primary btn-block">输入</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h4 class="text-center">文件上传</h4>
+        <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <td>文件名称</td>
+                <td>文件内容</td>
+                <td>上传日期</td>
+                <td>操作</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>XXX</td>
+                <td>XX</td>
+                <td>XXXX-XX-XX</td>
+                <td><a href="#">下载</a></td>
+            </tr>
+            <tr>
+                <td>XXX</td>
+                <td>XX</td>
+                <td>XXXX-XX-XX</td>
+                <td><a href="#">下载</a></td>
+            </tr>
+            <tr>
+                <td>XXX</td>
+                <td>XX</td>
+                <td>XXXX-XX-XX</td>
+                <td><a href="#">下载</a></td>
+            </tr>
+            <tr>
+                <td>XXX</td>
+                <td>XX</td>
+                <td>XXXX-XX-XX</td>
+                <td><a href="#">下载</a></td>
+            </tr>
+            <tr>
+                <td>XXX</td>
+                <td>XX</td>
+                <td>XXXX-XX-XX</td>
+                <td><a href="#">下载</a></td>
+            </tr>
+            </tbody>
+        </table>
+        <h4 class="text-center">项目详情</h4>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <td colspan="4">项目名称</td>
+                    <td colspan="4">XXXXXXXXXX</td>
+                </tr>
+                <tr>
+                    <td colspan="8">项目内容</td>
+                </tr>
+                <tr rowspan="3">
+                    <td colspan="8" rowspan="3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam dignissimos eveniet facere fuga impedit labore magnam neque possimus veritatis! Alias amet consectetur eligendi eum facilis ipsa labore quaerat rem.</td>
+                </tr>
+            <tr></tr>
+            </thead>
+            <thead>
+            <tr>
+                <td>序号</td>
+                <td>创建人</td>
+                <td>人数</td>
+                <td>开始时间</td>
+                <td>结束时间</td>
+                <td>发布时间</td>
+                <td>状态</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>sss</td>
+                <td>sss</td>
+                <td>sss</td>
+                <td>sss</td>
+                <td>ssss</td>
+                <td>sss</td>
+            </tr>
+            </tbody>
+        </table>
+        <h4 class="text-center">项目成员</h4>
+        <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <td>姓名</td>
+                <td>身份</td>
+                <td>学号</td>
+                <td>联系方式</td>
+                <td>专业</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>sss</td>
+                <td>sss</td>
+                <td>sss</td>
+                <td>sss</td>
+                <td>sss</td>
+            </tr>
+            </tbody>
+        </table>
+        <h4 class="text-center">项目完成进度</h4>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                60%
+            </div>
+        </div>
+        <hr>
+        <h4 class="text-center">项目成分</h4>
+        <div id="main" style="width: 800px;height:600px;margin: 0 auto;"></div>
+        <hr>
+        <h4 class="text-center">项目周报平时成绩</h4>
+        <div id="report" style="width: 800px;height:600px;margin: 0 auto;"></div>
+        <hr><h4 class="text-center">最终成绩</h4>
+        <div id="score" style="width: 800px;height:600px;margin: 0 auto;"></div>
+        <h4 class="text-center">最终成绩详情</h4>
+        <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <td>答辩</td>
+                <td>实践</td>
+                <td>企业</td>
+                <td>论文</td>
+                <td>周报</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>sss</td>
+                <td>sss</td>
+                <td>sss</td>
+                <td>sss</td>
+                <td>sss</td>
+            </tr>
+            </tbody>
+            <thead>
+            <tr>
+                <td>姓名</td>
+                <td>状态</td>
+                <td>等级</td>
+                <td>平时</td>
+                <td>总分</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>sss</td>
+                <td>sss</td>
+                <td>sss</td>
+                <td>sss</td>
+                <td style="color: #527db4;font-size: 18px">sss</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var myChart=echarts.init(document.getElementById('main'));
+        var option={
+            series:[{
+                name:'访问来源',
+                type:'pie',
+                radius:'55%',
+                data:[
+                    {value:235,name:'编程'},
+                    {value:274,name:'实践'},
+                    {value:310,name:'论文'},
+                    {value:335,name:'建模'},
+                    {value:400,name:'公式'}
+                ],
+                visualMap: {
+                    show: false,
+                    min: 80,
+                    max: 600,
+                    inRange: {
+                        colorLightness: [0, 1]
+                    }
+                },
+                roseType: 'angle',
+                itemStyle:{
+                    normal:{
+                        color:'#3659b4',
+                        shadowBlur:200,
+                        shadowColor:'rgba(0,0,0,0.2)'
+                    }
+                }
+            }]
+        }
+        myChart.setOption(option);
+        var reportChart=echarts.init(document.getElementById('report'))
+        option2 = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross',
+                    crossStyle: {
+                        color: '#999'
+                    }
+                }
+            },
+            toolbox: {
+                feature: {
+                    dataView: {show: true, readOnly: false},
+                    magicType: {show: true, type: ['line', 'bar']},
+                    restore: {show: true},
+                    saveAsImage: {show: true}
+                }
+            },
+            legend: {
+                data:['个人成绩','最高成绩','平均成绩']
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    data: ['1周','2周','3周','4周','5周','6周','7周','8周','9周','10周','11周','12周'],
+                    axisPointer: {
+                        type: 'shadow'
+                    }
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    name: '分数',
+                    min: 0,
+                    max: 100,
+                    interval: 5,
+                    axisLabel: {
+                        formatter: '{value} 分'
+                    }
+                },
+                {
+                    type: 'value',
+                    name: '分数',
+                    min: 0,
+                    max: 100,
+                    interval: 50,
+                    axisLabel: {
+                        formatter: '{value} 分'
+                    }
+                }
+            ],
+            series: [
+                {
+                    name:'个人成绩',
+                    type:'bar',
+                    data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 35.6, 62.2, 32.6, 20.0, 6.4, 3.3],
+                    itemStyle:{
+                        normal:{
+                            color:'#3f8cb6',
+                            shadowBlur:200,
+                            shadowColor:'rgba(0,0,0,0.2)'
+                        }
+                    }
+                },
+                {
+                    name:'最高成绩',
+                    type:'bar',
+                    data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 75.6, 82.2, 48.7, 18.8, 6.0, 2.3],
+                    itemStyle:{
+                        normal:{
+                            color:'#3659b4',
+                            shadowBlur:200,
+                            shadowColor:'rgba(0,0,0,0.2)'
+                        }
+                    }
+                },
+                {
+                    name:'平均成绩',
+                    type:'line',
+                    yAxisIndex: 1,
+                    data:[2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2],
+                    itemStyle:{
+                        normal:{
+                            color:'#40e2e2',
+                            shadowBlur:200,
+                            shadowColor:'rgba(0,0,0,0.2)'
+                        }
+                    }
+                }
+            ]
+        };
+        reportChart.setOption(option2)
+        var score=echarts.init(document.getElementById('score'))
+        option3 = {
+            tooltip: {},
+            legend: {
+                data: ['各项成绩']
+            },
+            radar: {
+                // shape: 'circle',
+                indicator: [
+                    { name: '实践', max: 100},
+                    { name: '编程', max: 100},
+                    { name: '论文', max: 100},
+                    { name: '企业', max: 100},
+                    { name: '答辩', max: 100}
+                ]
+            },
+            series: [{
+                name: '成绩 vs 满分',
+                type: 'radar',
+                // areaStyle: {normal: {}},
+                data : [
+                    {
+                        value : [75, 82, 89, 85, 79],
+                        name : '各项成绩'
+                    }
+                ],
+                itemStyle:{
+                    normal:{
+                        color:'#527db4',
+                        shadowBlur:200,
+                        shadowColor:'rgba(0,0,0,0.2)'
+                    }
+                }
+            }]
+        };
+        score.setOption(option3)
+    </script>
+</body>
+</html>

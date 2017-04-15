@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>项目报名</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/jquery-3.1.1.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap-datetimepicker.js"></script>
+    <script src="js/bootstrap-datetimepicker.fr.js"></script>
+    <style>*{
+        font-family: SimHei;
+    }</style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="breadcrumb">
+            <li><a href="">首页</a></li>
+            <li><a href="">项目</a></li>
+            <li>项目报名</li>
+        </div>
+
+                <div class="alert alert-warning" role="alert">
+                    <span class="glyphicon glyphicon-exclamation-sign">提示</span>
+                </div>
+        <h4>项目详情</h4>
+        <table class="table table-bordered">
+            <tr>
+                <td width="100">项目名称</td>
+                <td></td>
+                <td width="100">项目类型</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>企业名称</td>
+                <td></td>
+                <td>专业</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>学院</td>
+                <td></td>
+                <td>导师</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>导师专业</td>
+                <td></td>
+                <td>状态</td>
+                <td></td>
+            </tr>
+        </table>
+        <hr>
+        <h4>项目成分</h4>
+        <table class="table table-bordered">
+            <tr>
+                <td width="100">成分名称</td>
+                <td width="100">成分名称</td>
+                <td width="100">成分名称</td>
+                <td width="100">成分名称</td>
+                <td width="100">成分名称</td>
+            </tr>
+        </table>
+        <hr>
+        <h4>项目内容</h4>
+        <table class="table table-bordered">
+            <tr>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad adipisci deleniti eligendi eos est fuga hic labore molestias nobis odio reiciendis, rerum tempora tenetur ut veritatis vero voluptatem, voluptates! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores aut corporis est explicabo harum labore perferendis quam qui quo, saepe vero voluptas voluptates? Dicta explicabo magni nostrum quibusdam similique!</td>
+            </tr>
+        </table>
+        <hr>
+        <h4>结题要求</h4>
+        <table class="table table-bordered">
+            <tr>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad adipisci deleniti eligendi eos est fuga hic labore molestias nobis odio reiciendis, rerum tempora tenetur ut veritatis vero voluptatem, voluptates! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores aut corporis est explicabo harum labore perferendis quam qui quo, saepe vero voluptas voluptates? Dicta explicabo magni nostrum quibusdam similique!</td>
+            </tr>
+        </table>
+        <hr>
+        <h4>开始时间</h4><p>XXXX-XX-XX</p>
+        <h4>结束时间</h4><p>XXXX-XX-XX</p>
+        <hr>
+        <form class="form-inline">
+                <h4>组内身份</h4>
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    --请选择--
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="#">组长</a></li>
+                    <li><a href="#">组员</a></li>
+                </ul>
+            </div>
+                <div class="checkbox">
+                    <label style="line-height: 38px">
+                        <input type="checkbox" class="form-control" style="height: 13px;margin-top: 0;">已阅读项目详情,并保证能够准时完成项目
+                    </label>
+                </div>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary pull-right col-lg-1" data-toggle="modal" data-target="#myModal">
+                报名
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">提示</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>项目一旦报名不能恢复，请再次确认你符合报名条件。</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                            <button type="button" class="btn btn-primary">确认报名</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>

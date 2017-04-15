@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>回答</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/jquery-3.1.1.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap-datetimepicker.js"></script>
+    <script src="js/bootstrap-datetimepicker.fr.js"></script>
+    <style>*{
+        font-family: SimHei;
+    }</style>
+</head>
+<body>
+    <div class="container">
+        <div class="breadcrumb">
+            <li><a href="">首页</a></li>
+            <li><a href="">项目</a></li>
+            <li>提问</li>
+        </div>
+                <div class="alert alert-warning" role="alert">
+                    <span class="glyphicon glyphicon-exclamation-sign">提示</span>
+                </div>
+        <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <td>问题名称</td>
+                <td>标签</td>
+                <td>提问对象</td>
+                <td>提问日期</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>XXX</td>
+                <td>XX</td>
+                <td>XXXX-XX-XX</td>
+                <td><a href="#">下载</a></td>
+            </tr>
+            </tbody>
+            <thead>
+                <tr>
+                    <td colspan="4">内容</td>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td colspan="4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad expedita quae quam unde vero? Ea fuga fugiat nam nisi nostrum provident quam quo recusandae, rem voluptatem! Molestias quo tenetur ullam!</td>
+            </tr>
+            </tbody>
+        </table>
+        <hr>
+        <table class="table table-bordered">
+            <thead>
+                <tr><td>已回复内容</td><td width="80px">回复者</td><td width="100px">回复日期</td></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam beatae consequatur cupiditate earum eum illum impedit ipsa itaque minima, necessitatibus neque quisquam, quo, sapiente tempora temporibus tenetur vel voluptas voluptates?</td>
+                    <td>XX</td>
+                    <td>XXXX-XX-XX</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="control-label col-lg-1">回复内容</label>
+                        <div class="col-lg-11">
+                            <textarea name="" class="form-control" rows="10" placeholder="内容"></textarea>
+                        </div>
+                    </div>
+                </form>
+            <button type="button" class="btn btn-primary col-lg-1 pull-right" >回复</button>
+            <button type="button" class="btn btn-success col-lg-1 pull-right" style="margin-right: 20px">保存</button>
+        <button type="button" class="btn btn-danger pull-right col-lg-1" style="margin-right: 20px" data-toggle="modal" data-target="#myModal">
+            放弃
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">提示</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>确认放弃吗？</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary">确认</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>上传周报</title>
+    <title>周报详情</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="js/jquery-3.1.1.js"></script>
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -12,7 +12,14 @@
     <script src="js/bootstrap-datetimepicker.fr.js"></script>
     <style>*{
         font-family: SimHei;
-    }</style>
+    }
+    .reportBox{
+        border-left:1px solid #419ed6;
+        min-height: 20px;
+        padding: 19px;
+        margin-bottom: 20px;
+    }
+    </style>
 </head>
 <body>
 
@@ -21,7 +28,7 @@
             <li><a href="">首页</a></li>
             <li><a href="">项目</a></li>
             <li><a href="">项目详情</a></li>
-            <li>周报上传</li>
+            <li>周报详情</li>
         </div>
 
                 <div class="alert alert-warning" role="alert">
@@ -58,57 +65,67 @@
                     <div class="form-group">
                         <label class="control-label col-lg-1">标题</label>
                         <div class="col-lg-5">
-                            <input type="text" class="form-control" placeholder="项目题目">
+                            <div class="reportBox">Lorem ipsum dolor sit amet, consectetur adip</div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-lg-1">难易程度</label>
-                        <div class="dropdown col-lg-4">
-                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                --请选择--
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a href="#">轻松</a></li>
-                                <li><a href="#">中等</a></li>
-                                <li><a href="#">难</a></li>
-                                <li><a href="#">很难</a></li>
-                            </ul>
+                        <div class="col-lg-2">
+                            <div class="reportBox">Lorem ips</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-1">企业名称</label>
+                        <div class="col-lg-11">
+                            <div class="reportBox">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo odit possimus repudiandae vitae. Aliquid error qui quos sequi. Ab accusamus beatae harum inventore omnis porro quis ratione saepe unde, velit.</div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-lg-1">项目内容</label>
                         <div class="col-lg-11">
-                            <textarea name="" class="form-control" rows="10" placeholder="内容简介"></textarea>
+                            <div class="reportBox">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo odit possimus repudiandae vitae. Aliquid error qui quos sequi. Ab accusamus beatae harum inventore omnis porro quis ratione saepe unde, velit.</div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-lg-1">遇到问题</label>
                         <div class="col-lg-11">
-                            <textarea name="" class="form-control" rows="5" placeholder="内容简介"></textarea>
+                            <div class="reportBox">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo odit possimus repudiandae vitae. Aliquid error qui quos sequi. Ab accusamus beatae harum inventore omnis porro quis ratione saepe unde, velit.</div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-lg-1">本周完成</label>
                         <div class="col-lg-11">
-                            <textarea name="" class="form-control" rows="5" placeholder="内容简介"></textarea>
+                            <div class="reportBox">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo odit possimus repudiandae vitae. Aliquid error qui quos sequi. Ab accusamus beatae harum inventore omnis porro quis ratione saepe unde, velit.</div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-lg-1">下周计划</label>
                         <div class="col-lg-11">
-                            <textarea name="" class="form-control" rows="5" placeholder="内容简介"></textarea>
+                            <div class="reportBox">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo odit possimus repudiandae vitae. Aliquid error qui quos sequi. Ab accusamus beatae harum inventore omnis porro quis ratione saepe unde, velit.</div>
                         </div>
                     </div>
                     <div class="form-group">
                     <label class="control-label col-lg-1">心得体会</label>
                         <div class="col-lg-11">
-                            <textarea name="" class="form-control" rows="5" placeholder="内容简介"></textarea>
+                            <div class="reportBox">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo odit possimus repudiandae vitae. Aliquid error qui quos sequi. Ab accusamus beatae harum inventore omnis porro quis ratione saepe unde, velit.</div>
                         </div>
                     </div>
-
                 </form>
-            <button type="button" class="btn btn-primary col-lg-1 pull-right" >上传周报</button>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-lg-1">打分</label>
+                <div class="col-lg-11">
+                    <input type="text" class="form-control col-lg-2" style="width: 150px" placeholder="分数（1~100）">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-lg-1">评语</label>
+                <div class="col-lg-11">
+                    <textarea name="" class="form-control" rows="5" placeholder="评语内容"></textarea>
+                </div>
+            </div>
+        </form>
+            <button type="button" class="btn btn-primary col-lg-1 pull-right" >评价</button>
             <button type="button" class="btn btn-success col-lg-1 pull-right" style="margin-right: 20px">保存</button>
         <button type="button" class="btn btn-danger pull-right col-lg-1" style="margin-right: 20px" data-toggle="modal" data-target="#myModal">
             放弃
