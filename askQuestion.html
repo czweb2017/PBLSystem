@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="questionApp">
 <head>
     <meta charset="UTF-8">
     <title>提问</title>
@@ -14,8 +14,27 @@
         font-family: SimHei;
     }</style>
 </head>
-<body>
-
+<body ng-controller="askQuesCtrl">
+<script src="js/angular.js"></script>
+<script>
+    var majors=['计算机科学与技术','电子信息工程','国际经济与贸易','高分子材料']
+    var teachers=['Mike','Bill','Tom','Lilith']
+    var studentId=0;
+    /*id title content asker askfor tip releasetime*/
+    var app=angular.module('questionApp',['ng'])
+    app.controller('askQuesCtrl',['$scope','$identy','$GS',function($scope,$idnety,$GS){
+        //var databag={title content asker askfor tip}
+        $scope.tip='0';
+        $scope.teacher='0';
+        $scope.ask=function(){
+            if($scope.title!==undefined&&$scope.content!==undefined&&$scope.tip!='0'&&$scope.teacher!='0'){
+                console.log($scope.title,$scope.tip,$scope.teacher,$scope.content)
+                var databag={title:$scope.title,tip:$scope.tip,teacher:$scope.teacher,content:$scope.content}
+            }
+        }
+    }])
+</script>
+<script src="js/all.js"></script>
     <div class="container">
         <div class="breadcrumb">
             <li><a href="">首页</a></li>
@@ -30,56 +49,43 @@
                     <div class="form-group">
                         <label class="control-label col-lg-1">标题</label>
                         <div class="col-lg-5">
-                            <input type="text" class="form-control" placeholder="问题题目">
+                            <input type="text" class="form-control" placeholder="问题题目" ng-model="title">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-lg-1">标签</label>
                         <div class="dropdown col-lg-2">
-                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                --请选择--
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a href="#">电子信息工程</a></li>
-                                <li><a href="#">计算机</a></li>
-                                <li><a href="#">土木工程</a></li>
-                            </ul>
+                            <select class="form-control" ng-model="tip" ng-init="tip='0'" id="major">
+                                <option value="0">请选择</option>
+                                <option value="1">计算机科学与技术</option>
+                                <option value="2">电子信息工程</option>
+                                <option value="3">国际经济与贸易</option>
+                                <option value="4">高分子材料</option>
+                            </select>
                         </div>
-                        <button class="btn btn-primary">添加</button>
                         <span class="label label-info">电信</span>
-                        <span class="label label-info">计算机</span>
-                        <span class="label label-info">土木工程</span>
-                        <span class="label label-info">会计</span>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-lg-1">@老师</label>
                         <div class="dropdown col-lg-2">
-                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                --请选择--
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a href="#">电子信息工程</a></li>
-                                <li><a href="#">计算机</a></li>
-                                <li><a href="#">土木工程</a></li>
-                            </ul>
+                            <select class="form-control" ng-model="teacher" ng-init="tip='0'" id="teacher">
+                                <option value="0">请选择</option>
+                                <option value="1">Mike</option>
+                                <option value="2">Bill</option>
+                                <option value="3">Tom</option>
+                                <option value="4">Lilith</option>
+                            </select>
                         </div>
-                        <button class="btn btn-primary">添加</button>
                         <span class="label label-info">电信</span>
-                        <span class="label label-info">计算机</span>
-                        <span class="label label-info">土木工程</span>
-                        <span class="label label-info">会计</span>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-lg-1">项目内容</label>
+                        <label class="control-label col-lg-1">问题内容</label>
                         <div class="col-lg-11">
-                            <textarea name="" class="form-control" rows="10" placeholder="内容"></textarea>
+                            <textarea name="" class="form-control" rows="10" placeholder="内容" ng-model="content"></textarea>
                         </div>
                     </div>
-
                 </form>
-            <button type="button" class="btn btn-primary col-lg-1 pull-right" >提问</button>
+            <button type="button" class="btn btn-primary col-lg-1 pull-right" ng-click="ask()">提问</button>
             <button type="button" class="btn btn-success col-lg-1 pull-right" style="margin-right: 20px">保存</button>
         <button type="button" class="btn btn-danger pull-right col-lg-1" style="margin-right: 20px" data-toggle="modal" data-target="#myModal">
             放弃

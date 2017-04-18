@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
     <title>项目</title>
@@ -10,32 +10,19 @@
     <script src="js/bootstrap.js"></script>
     <script src="js/bootstrap-datetimepicker.js"></script>
     <script src="js/bootstrap-datetimepicker.fr.js"></script>
-    <style>*{
-        font-family: SimHei;
-    }</style>
-</head>
-<body>
 
+    <style>
+        *{
+        font-family: SimHei;
+    }
+        a{
+         text-decoration: none !important;
+        }
+    </style>
+<!--</head>-->
+<body>
     <div class="container">
-        <!--项目页面导航栏-->
-        <nav style="position:fixed; width: 180px; left: 10px;top: 100px;">
-            <div class="list-group">
-                <a href="#" class="list-group-item active">
-                    项目列表
-                </a>
-                <a href="#" class="list-group-item">
-                    问题列表
-                </a>
-                <a href="#" class="list-group-item">
-                    <span class="badge">3</span>
-                    我的项目
-                </a>
-                <a href="#" class="list-group-item">
-                    <span class="badge">3</span>
-                    我的问题
-                </a>
-            </div>
-        </nav>
+
         <!--返回顶部-->
         <a href="#">
             <div style="border-radius: 5px;text-align:center;padding-top:15px;width: 50px;height: 50px;position: fixed;background-color:#838383;opacity: .7;right: 40px;bottom: 80px;">
@@ -53,29 +40,32 @@
             <div class="form-group">
                 <h4 class="text-center">项目列表</h4>
             </div>
+
+
+
+            <div  ng-controller="itemListCtrl">
             <div class="form-group">
                 <label class="control-label col-lg-1">标题</label>
                 <div class="col-lg-3">
-                    <input type="text" class="form-control" placeholder="项目题目">
+                    <input ng-model="itemKeyWord1" type="text" class="form-control" placeholder="项目题目">
                 </div>
                 <label class="control-label col-lg-1">导师</label>
                 <div class="col-lg-2">
-                    <input type="text" class="form-control" placeholder="导师姓名">
+                    <input ng-model="itemKeyWord2" type="text" class="form-control" placeholder="导师姓名">
                 </div>
                 <label class="control-label col-lg-1">学生</label>
                 <div class="col-lg-2">
-                    <input type="text" class="form-control" placeholder="学生姓名">
+                    <input ng-model="itemKeyWord3" type="text" class="form-control" placeholder="学生姓名">
                 </div>
-                <button class="btn btn-primary">查询</button>
+                <button class="btn btn-primary" ng-click="queryItem()">查询</button>
             </div>
-
         <hr>
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <td>序号</td>
                     <td>项目名称</td>
-                    <td>创建人</td>
+                    <td>导师</td>
                     <td>人数限制</td>
                     <td>开始时间</td>
                     <td>结束时间</td>
@@ -86,75 +76,50 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>sss</td>
-                    <td>sss</td>
-                    <td>sss</td>
-                    <td>sss</td>
-                    <td>sss</td>
-                    <td>ssss</td>
-                    <td>进行中</td>
-                    <td><a href="#">查看</a></td>
-                    <td><a href="#">报名</a></td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>sss</td>
-                    <td>sss</td>
-                    <td>sss</td>
-                    <td>sss</td>
-                    <td>sss</td>
-                    <td>ssss</td>
-                    <td>未发布</td>
-                    <td><a href="#">查看</a></td>
-                    <td><a href="#">报名</a></td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>sss</td>
-                    <td>sss</td>
-                    <td>sss</td>
-                    <td>sss</td>
-                    <td>sss</td>
-                    <td>ssss</td>
-                    <td>已结题</td>
-                    <td><a href="#">查看</a></td>
-                    <td><a href="#">报名</a></td>
+                <tr ng-repeat="item in itemList">
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.tutor}}</td>
+                    <td>{{item.sum}}</td>
+                    <td>{{item.starttime}}</td>
+                    <td>{{item.endtime}}</td>
+                    <td>{{item.releasetime}}</td>
+                    <td>{{item.state}}</td>
+                    <td><a href="itemDetail.html?id={{showItemDetail($index)}}" ng-click="jump()">查看</a></td>
+                    <td><a href="joinItem.html?id={{showItemDetail($index)}}">报名</a></td>
                 </tr>
             </tbody>
         </table>
         <nav>
             <ul class="pagination">
-                <li><a href="javascript:void(0)">
-                    <span>&laquo;</span>
+                <li><a href="#" ng-click="preItem()">
+                    <span>上一页</span>
                 </a></li>
-                <li class="active"><a href="javascript:void(0)">1</a></li>
-                <li><a href="javascript:void(0)">2</a></li>
-                <li><a href="javascript:void(0)">3</a></li>
-                <li><a href="javascript:void(0)">4</a></li>
-                <li><a href="javascript:void(0)">5</a></li>
-                <li><a href="javascript:void(0)">6</a></li>
-                <li><a href="javascript:void(0)">
-                    <span>&raquo;</span>
+                <li ng-class="{active: isActivePage(page)}" ng-repeat="page in itemPage  track by $index"><a href="#"  ng-click="toItemPage(page)">{{page}}</a></li>
+                <li><a href="#" ng-click="nextItem()">
+                    <span>下一页</span>
                 </a></li>
             </ul>
         </nav>
             <div>
-                <button type="button" class="btn btn-primary col-lg-1 pull-right">修改项目</button>
-                <button type="button" class="btn btn-warning col-lg-1 pull-right" style="margin-right: 20px">创建项目</button>
-                <button type="button" class="btn btn-danger col-lg-1 pull-right" style="margin-right: 20px">删除项目</button>
+                <a href="createItem.html" type="button" class="btn btn-primary col-lg-1 pull-right" style="margin-right: 20px">创建项目</a>
+                <a href="" type="button" class="btn btn-danger col-lg-1 pull-right" style="margin-right: 20px">删除项目</a>
+            </div>
             </div>
             <div style="height: 40px;"></div>
             <hr>
+
+
+
+            <div ng-controller="quesListCtrl">
         <div class="form-group">
             <h4 class="text-center">问题列表</h4>
         </div>
             <div>
-                <button class="btn btn-primary">提问</button>
-                <button class="btn btn-primary pull-right">查询</button>
+                <a href="askQuestion.html" class="btn btn-primary">提问</a>
+                <a class="btn btn-primary pull-right" ng-click="queryQues()">查询</a>
                 <div class="col-lg-2 pull-right">
-                    <input type="text" class="form-control" placeholder="关键词">
+                    <input type="text" class="form-control" placeholder="关键词" ng-model="quesKeyWords">
                 </div>
             </div>
 
@@ -164,60 +129,58 @@
             <tr>
                 <td>序号</td>
                 <td>问题</td>
-                <td>内容</td>
                 <td>提问时间</td>
                 <td>状态</td>
                 <td>提问人</td>
+                <td>提问对象</td>
                 <td width="93">操作</td>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>1</td>
-                <td>sss</td>
-                <td>sss</td>
-                <td>XXXX-XX-XX</td>
-                <td>已解决</td>
-                <td>sss</td>
-                <td><a href="javascript:void(0)">查看</a></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>sss</td>
-                <td>sss</td>
-                <td>XXXX-XX-XX</td>
-                <td>未解决</td>
-                <td>sss</td>
-                <td><a href="javascript:void(0)">查看</a></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>sss</td>
-                <td>sss</td>
-                <td>XXXX-XX-XX</td>
-                <td>已解决</td>
-                <td>sss</td>
-                <td><a href="javascript:void(0)">查看</a></td>
+            <tr ng-repeat="item in itemList">
+                <td>{{item.id}}</td>
+                <td>{{item.title}}</td>
+                <td>{{item.releasetime}}</td>
+                <td>{{item.state}}</td>
+                <td>{{item.asker}}</td>
+                <td>{{item.askfor}}</td>
+                <td><a href="ansQuestion.html?id={{showItemDetail($index)}}">查看</a></td>
             </tr>
             </tbody>
         </table>
-        <nav>
-            <ul class="pagination">
-                <li><a href="javascript:void(0)">
-                    <span>&laquo;</span>
-                </a></li>
-                <li class="active"><a href="javascript:void(0)">1</a></li>
-                <li><a href="javascript:void(0)">2</a></li>
-                <li><a href="javascript:void(0)">3</a></li>
-                <li><a href="javascript:void(0)">4</a></li>
-                <li><a href="javascript:void(0)">5</a></li>
-                <li><a href="javascript:void(0)">6</a></li>
-                <li><a href="javascript:void(0)">
-                    <span>&raquo;</span>
-                </a></li>
-            </ul>
-        </nav>
+                <nav>
+                    <ul class="pagination">
+                        <li><a href="#" ng-click="preItem()">
+                            <span>上一页</span>
+                        </a></li>
+                        <li ng-class="{active: isActivePage(page)}" ng-repeat="page in itemPage  track by $index"><a href="#"  ng-click="toItemPage(page)">{{page}}</a></li>
+                        <li><a href="#" ng-click="nextItem()">
+                            <span>下一页</span>
+                        </a></li>
+                    </ul>
+                </nav>
+            </div>
         <hr>
+            <div ng-controller="myItemAndMyQues">
+                <!--项目页面导航栏-->
+                <nav style="position:fixed; width: 180px; left: 10px;top: 100px;"   >
+                    <div class="list-group">
+                        <a href="#" class="list-group-item active">
+                            项目列表
+                        </a>
+                        <a href="#" class="list-group-item">
+                            问题列表
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <span class="badge">{{mil}}</span>
+                            我的项目
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <span class="badge">{{mql}}</span>
+                            我的问题
+                        </a>
+                    </div>
+                </nav>
             <h4 class="text-center">我的项目</h4>
             <div>
                 <table class="table table-bordered table-striped">
@@ -235,37 +198,15 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>sss</td>
-                        <td>sss</td>
-                        <td>sss</td>
-                        <td>sss</td>
-                        <td>sss</td>
-                        <td>ssss</td>
+                    <tr ng-repeat="item in myitem">
+                        <td>{{item.id}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.tutor}}</td>
+                        <td>{{item.starttime}}</td>
+                        <td>{{item.endtime}}</td>
+                        <td>{{item.releasetime}}</td>
+                        <td>{{item.state}}</td>
                         <td>进行中</td>
-                        <td><a href="#">查看</a></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>sss</td>
-                        <td>sss</td>
-                        <td>sss</td>
-                        <td>sss</td>
-                        <td>sss</td>
-                        <td>ssss</td>
-                        <td>未发布</td>
-                        <td><a href="#">查看</a></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>sss</td>
-                        <td>sss</td>
-                        <td>sss</td>
-                        <td>sss</td>
-                        <td>sss</td>
-                        <td>ssss</td>
-                        <td>已结题</td>
                         <td><a href="#">查看</a></td>
                     </tr>
                     </tbody>
@@ -286,38 +227,24 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>sss</td>
-                        <td>sss</td>
-                        <td>XXXX-XX-XX</td>
-                        <td>已解决</td>
-                        <td>sss</td>
-                        <td><a href="javascript:void(0)">查看</a></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>sss</td>
-                        <td>sss</td>
-                        <td>XXXX-XX-XX</td>
-                        <td>未解决</td>
-                        <td>sss</td>
-                        <td><a href="javascript:void(0)">查看</a></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>sss</td>
-                        <td>sss</td>
-                        <td>XXXX-XX-XX</td>
-                        <td>已解决</td>
-                        <td>sss</td>
+                    <tr ng-repeat="item in myques">
+                        <td>{{item.id}}</td>
+                        <td>{{item.title}}</td>
+                        <td>{{item.content}}</td>
+                        <td>{{item.releasetime}}</td>
+                        <td>{{item.state}}</td>
+                        <td>{{item.asker}}</td>
                         <td><a href="javascript:void(0)">查看</a></td>
                     </tr>
                     </tbody>
                 </table>
             </div>
+            </div>
         </form>
-
     </div>
+    <script src="js/angular.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="js/item.js"></script>
+    <script src="js/all.js"></script>
 </body>
 </html>

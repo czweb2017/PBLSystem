@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
     <title>周报详情</title>
@@ -10,6 +10,7 @@
     <script src="js/bootstrap.js"></script>
     <script src="js/bootstrap-datetimepicker.js"></script>
     <script src="js/bootstrap-datetimepicker.fr.js"></script>
+    <script src="js/angular.js"></script>
     <style>*{
         font-family: SimHei;
     }
@@ -22,8 +23,49 @@
     </style>
 </head>
 <body>
-
-    <div class="container">
+<script>
+    // /**
+    //  * Created by CHENZ on 2017/4/16.
+    //  */
+    var url=location.search;
+    function getId(url){//获取id
+        var res=url.split('?')[1].split('=')[1]
+        return res;
+    }
+    var id=getId(url);
+    var studentId=0;//获取学生id
+    var app=angular.module('myApp',['ng'])
+    app.controller('reportDetail',['$scope','$GS',function($scope,$GS){
+        $scope.data=null
+        $scope.itemdata=null
+        $GS.getDataById('reportDetail.php',id,function(data){
+            console.log(data)
+            $scope.data=data
+        })
+        $GS.getDataById('item.php',id,function(data){
+            $scope.itemdata=data[0]
+        })
+    }])
+</script>
+<script>
+    /*周报打分部分*/
+    var majors=['计算机科学与技术','电子信息工程','国际经济与贸易','高分子材料']
+    var teachers=['Mike','Bill','Tom','Lilith']
+    var studentId=0;
+    /*id title content asker askfor tip releasetime*/
+    app.controller('evlReportCtrl',['$scope','$identy','$GS',function($scope,$idnety,$GS){
+        $scope.evl=function(){
+            if(($scope.score>=0&&$scope.score<=100)&&$scope.content!=undefined&&$scope.content!=''){
+                console.log($scope.score,$scope.content)
+                var databag={score:$scope.score,content:$scope.content}
+                $scope.score=''
+                $scope.content=''
+            }
+        }
+    }])
+</script>
+<script src="js/all.js"></script>
+    <div class="container" ng-controller="reportDetail">
         <div class="breadcrumb">
             <li><a href="">首页</a></li>
             <li><a href="">项目</a></li>
@@ -34,80 +76,82 @@
                 <div class="alert alert-warning" role="alert">
                     <span class="glyphicon glyphicon-exclamation-sign">提示</span>
                 </div>
+
         <table class="table table-bordered">
             <tr>
                 <td width="100">项目名称</td>
-                <td></td>
+                <td>{{itemdata.name}}</td>
                 <td width="100">专业</td>
-                <td></td>
+                <td>{{itemdata.major}}</td>
             </tr>
             <tr>
                 <td>指导教师</td>
-                <td></td>
-                <td>学生姓名</td>
-                <td></td>
+                <td>{{itemdata.tutor}}</td>
+                <td>指导教师专业</td>
+                <td>{{itemdata.tutormajor}}</td>
             </tr>
             <tr>
                 <td>开始时间</td>
-                <td></td>
+                <td>{{itemdata.starttime}}</td>
                 <td>结束时间</td>
-                <td></td>
+                <td>{{itemdata.endtime}}</td>
             </tr>
             <tr>
                 <td>企业</td>
-                <td></td>
+                <td>{{itemdata.company}}</td>
                 <td>状态</td>
-                <td></td>
+                <td>{{itemdata.state}}</td>
             </tr>
         </table>
         <hr>
+        <div ng-controller="evlReportCtrl">
                 <form class="form-horizontal" role="form">
                     <div class="form-group">
                         <label class="control-label col-lg-1">标题</label>
                         <div class="col-lg-5">
-                            <div class="reportBox">Lorem ipsum dolor sit amet, consectetur adip</div>
+                            <div class="reportBox">{{data.title}}</div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-lg-1">难易程度</label>
                         <div class="col-lg-2">
-                            <div class="reportBox">Lorem ips</div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-lg-1">企业名称</label>
-                        <div class="col-lg-11">
-                            <div class="reportBox">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo odit possimus repudiandae vitae. Aliquid error qui quos sequi. Ab accusamus beatae harum inventore omnis porro quis ratione saepe unde, velit.</div>
+                            <div class="reportBox">{{data.level}}</div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-lg-1">项目内容</label>
                         <div class="col-lg-11">
-                            <div class="reportBox">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo odit possimus repudiandae vitae. Aliquid error qui quos sequi. Ab accusamus beatae harum inventore omnis porro quis ratione saepe unde, velit.</div>
+                            <div class="reportBox">{{data.content}}</div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-lg-1">遇到问题</label>
                         <div class="col-lg-11">
-                            <div class="reportBox">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo odit possimus repudiandae vitae. Aliquid error qui quos sequi. Ab accusamus beatae harum inventore omnis porro quis ratione saepe unde, velit.</div>
+                            <div class="reportBox">{{data.ques}}</div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-lg-1">本周完成</label>
+                        <label class="control-label col-lg-1">上周完成</label>
                         <div class="col-lg-11">
-                            <div class="reportBox">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo odit possimus repudiandae vitae. Aliquid error qui quos sequi. Ab accusamus beatae harum inventore omnis porro quis ratione saepe unde, velit.</div>
+                            <div class="reportBox">{{data.preweek}}</div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-lg-1">下周计划</label>
                         <div class="col-lg-11">
-                            <div class="reportBox">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo odit possimus repudiandae vitae. Aliquid error qui quos sequi. Ab accusamus beatae harum inventore omnis porro quis ratione saepe unde, velit.</div>
+                            <div class="reportBox">{{data.nextweek}}</div>
                         </div>
                     </div>
                     <div class="form-group">
                     <label class="control-label col-lg-1">心得体会</label>
                         <div class="col-lg-11">
-                            <div class="reportBox">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo odit possimus repudiandae vitae. Aliquid error qui quos sequi. Ab accusamus beatae harum inventore omnis porro quis ratione saepe unde, velit.</div>
+                            <div class="reportBox">{{data.gain}}</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-1">周报得分</label>
+                        <div class="col-lg-11">
+                            <div class="reportBox">{{data.score}}</div>
                         </div>
                     </div>
                 </form>
@@ -115,17 +159,17 @@
             <div class="form-group">
                 <label class="control-label col-lg-1">打分</label>
                 <div class="col-lg-11">
-                    <input type="text" class="form-control col-lg-2" style="width: 150px" placeholder="分数（1~100）">
+                    <input type="text" ng-model="score" class="form-control col-lg-2" style="width: 150px" placeholder="分数（1~100）">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-lg-1">评语</label>
                 <div class="col-lg-11">
-                    <textarea name="" class="form-control" rows="5" placeholder="评语内容"></textarea>
+                    <textarea name="" class="form-control" ng-model="content" rows="5" placeholder="评语内容"></textarea>
                 </div>
             </div>
         </form>
-            <button type="button" class="btn btn-primary col-lg-1 pull-right" >评价</button>
+            <button type="button" class="btn btn-primary col-lg-1 pull-right" ng-click="evl()">评价</button>
             <button type="button" class="btn btn-success col-lg-1 pull-right" style="margin-right: 20px">保存</button>
         <button type="button" class="btn btn-danger pull-right col-lg-1" style="margin-right: 20px" data-toggle="modal" data-target="#myModal">
             放弃
@@ -143,12 +187,12 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                        <button type="button" class="btn btn-primary">确认</button>
+                        <a href="JavaScript:history.go(-1)" class="btn btn-primary">确认</a>
                     </div>
                 </div>
             </div>
         </div>
-
+        </div>
     </div>
 </body>
 </html>

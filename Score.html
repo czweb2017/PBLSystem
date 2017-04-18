@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="scoreApp">
+<head>
+    <meta charset="UTF-8">
+    <title>周报打分</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/jquery-3.1.1.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap-datetimepicker.js"></script>
+    <script src="js/bootstrap-datetimepicker.fr.js"></script>
+    <style>*{
+        font-family: SimHei;
+    }</style>
+</head>
+<body ng-controller="scoreCtrl">
+<script src="js/angular.js"></script>
+<script>
+    var majors=['计算机科学与技术','电子信息工程','国际经济与贸易','高分子材料']
+    var teachers=['Mike','Bill','Tom','Lilith']
+    var studentId=0;
+    /*id title content asker askfor tip releasetime*/
+    var app=angular.module('scoreApp',['ng'])
+    app.controller('scoreCtrl',['$scope','$identy','$GS',function($scope,$idnety,$GS){
+        $scope.evlScore=function(){
+            if(true){
+                console.log($scope.score1,$scope.score2,$scope.score3,$scope.score4,$scope.score5,$scope.evl,$scope.advice,$scope.final)
+                //var databag={score1:$scope.score1 evl advice final}
+            }
+        }
+    }])
+</script>
+<script src="js/all.js"></script>
+    <div class="container">
+        <div class="breadcrumb">
+            <li><a href="">首页</a></li>
+            <li><a href="">项目</a></li>
+            <li><a href="">项目详情</a></li>
+            <li>打分</li>
+        </div>
+                <div class="alert alert-warning" role="alert">
+                    <span class="glyphicon glyphicon-exclamation-sign">提示</span>
+                </div>
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="control-label col-lg-1">项目成分得分1</label>
+                        <div class="col-lg-5">
+                            <input ng-model="score1" type="text" class="form-control" placeholder="项目的构成成分">
+                        </div>
+                        <label class="control-label col-lg-1">项目成分得分2</label>
+                        <div class="col-lg-5">
+                            <input ng-model="score2" type="text" class="form-control" placeholder="项目的构成成分">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-1">项目成分得分3</label>
+                        <div class="col-lg-5">
+                            <input ng-model="score3" type="text" class="form-control" placeholder="项目的构成成分">
+                        </div>
+                        <label class="control-label col-lg-1">项目成分得分4</label>
+                        <div class="col-lg-5">
+                            <input ng-model="score4" type="text" class="form-control" placeholder="项目的构成成分">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-1">项目成分得分5</label>
+                        <div class="col-lg-5">
+                            <input ng-model="score5" type="text" class="form-control" placeholder="项目的构成成分">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-1">评价</label>
+                        <div class="col-lg-11 col-lg-offset-1">
+                            <textarea ng-model="evl" name="" class="form-control" rows="10" placeholder="内容简介"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-1">建议意见</label>
+                        <div class="col-lg-11 col-lg-offset-1">
+                            <textarea ng-model="advice" name="" class="form-control" rows="5" placeholder="内容简介"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-1">总分</label>
+                        <div class="col-lg-2">
+                            <input ng-model="final" type="text" class="form-control" placeholder="项目最终得分">
+                        </div>
+                    </div>
+                </form>
+        <hr>
+        <button type="button" class="btn btn-primary col-lg-1 pull-right" ng-click="evlScore()">评分</button>
+        <button type="button" class="btn btn-danger pull-right col-lg-1" style="margin-right: 20px" data-toggle="modal" data-target="#myModal">
+            放弃
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">提示</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>确认放弃吗？</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary">确认</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div>
+</body>
+</html>
